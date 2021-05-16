@@ -1,14 +1,25 @@
+@font-face{
+  font-family: TeslaFont;
+  src : url('./font.ttf')
+}
 *{
   box-sizing: border-box;
-  font-family: "rubik", sans-serif;
+  font-family: 'TeslaFont';
   /* color: #393C41; */
   margin: 0;
   padding: 0;
+  font-family: ;
 }
 
 body{
   width: 100vw;
   overflow-x: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: #393C41;
+  font-weight: 500;
 }
 
 
@@ -28,5 +39,9 @@ body{
 .heading{
   font-size: 40px;
   font-weight: 500;
-  font-family: "Gotham Medium",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+
+li{
+  font-weight: 100;
 }

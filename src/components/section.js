@@ -1,5 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import Fade from 'react-reveal/Fade';
 
 
 function section(props) {
@@ -7,23 +8,26 @@ function section(props) {
     
     return (
         <Wrap bg = {props.img}>
-            <ItemText>
-                <h1 className="heading">{props.title}</h1>
-                <p>{props.discri}</p>
-            </ItemText>
+            <Fade bottom>
+                <ItemText>
+                    <h1 className="heading">{props.title}</h1>
+                    <p>{props.discri}</p>
+                </ItemText>
+            </Fade>
             <div>
-                <ButtoGroup>
-                    <LeftBut>
-                        {props.LB}
-                    </LeftBut>
+                <Fade bottom>
+                    <ButtoGroup>
+                        <LeftBut>
+                            {props.LB}
+                        </LeftBut>
 
-                    { props.RB &&
-                        <RightBut>
-                            {props.RB}
-                        </RightBut>
-                    }
-
-                </ButtoGroup>
+                        { props.RB &&
+                            <RightBut>
+                                {props.RB}
+                            </RightBut>
+                        }
+                    </ButtoGroup>
+                </Fade>
                 <DownArrow src="/images/down-arrow.svg"/>
             </div>
         </Wrap>
@@ -33,6 +37,9 @@ function section(props) {
 export default section
 
 const Wrap = styled.div`
+    
+    scroll-snap-align:start; 
+
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -48,6 +55,10 @@ const Wrap = styled.div`
 const ItemText = styled.div`
     padding-top: 17vh;
     color: #7f7f7f;
+    h1{
+        color: #393c41;
+    }
+    
 `
 
 const ButtoGroup = styled.div`
@@ -79,12 +90,15 @@ const LeftBut = styled.div`
 
 `
 const RightBut = styled(LeftBut)`
-    opacity: .5;
+    background-color: rgb(255, 255, 255);
+    opacity: .7;
+    color: #000;
 `
 
 
 const DownArrow = styled.img`
     margin-top: 20px;
     height: 40px;
+    
     animation: anymateDown infinite 1.5s;
 `
